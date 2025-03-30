@@ -26,7 +26,9 @@ namespace RssReader
     /// </summary>
     public partial class App : Application
     {
-        private Window? _window;
+        public static Window CurrentWindow => _window ?? (_window = new Window());
+        private static Window? _window;
+
         private Mutex? _singleInstanceMutex;
 
         public IServiceProvider Services { get; }
@@ -62,7 +64,6 @@ namespace RssReader
         {
             base.OnLaunched(args);
 
-            _window = new MainWindow();
             _window.ExtendContentToTitleBar();
             _window.Activate();
 
