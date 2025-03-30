@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="RssReader.Views.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:RssReader.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
-    </Grid>
+    <StackPanel Margin="10">
+        <ComboBox
+            x:Name="ThemeComboBox"
+            Header="Theme"
+            SelectionChanged="ThemeComboBox_SelectionChanged">
+            <ComboBoxItem Content="Light" />
+            <ComboBoxItem Content="Dark" />
+        </ComboBox>
+        <ComboBox x:Name="FontSizeComboBox" Header="Font Size">
+            <ComboBoxItem Content="12" />
+            <ComboBoxItem Content="14" />
+            <ComboBoxItem Content="16" />
+        </ComboBox>
+        <ComboBox x:Name="BackgroundMaterialComboBox" Header="Background Material">
+            <ComboBoxItem Content="Acrylic" />
+            <ComboBoxItem Content="Mica" />
+        </ComboBox>
+    </StackPanel>
 </Page>
